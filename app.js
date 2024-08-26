@@ -15,9 +15,8 @@ rl.question('Digite algo: ', (resposta) => {
         MiddleOfWord = Word[i].length / 2;
         let parte1 = Word[i].substring(0, MiddleOfWord);
         let parte2 = Word[i].substring((TotalOfStrings - MiddleOfWord));
-        let result = `**${parte1}**${parte2}`;
-        AllWords += result + ",";
-        
+        let result = `**${parte1}**${parte2} `;
+        AllWords += result;
     }
     console.log(AllWords);
     rl.close();
