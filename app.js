@@ -26,7 +26,7 @@ function ConcatStariskInTheWord(input) {
     }
     return allWords;
 }
-
+module.exports = ConcatStariskInTheWord;
 /*
 Quais testes que eu faria?
 - Provar que funciona
