@@ -4,12 +4,18 @@ class ConcatStariskInTheWordTests {
 
     static runAllTests() {
         console.log("Running all tests...");
-        this.testBasicFunctionality();
-        this.testEmptyOrNullInput();
-        this.testExtraSpaces();
-        this.testLongWord();
-        this.testIgnoreShortWords();
-        console.log("All tests completed.");
+        try {
+            this.testBasicFunctionality();
+            this.testEmptyOrNullInput();
+            this.testExtraSpaces();
+            this.testLongWord();
+            this.testIgnoreShortWords();
+            console.log("All tests completed successfully.");
+            process.exit(0);
+        } catch (error) {
+            console.error("Tests failed with error: ", error);
+            process.exit(1);
+        }
     }
 
     static testBasicFunctionality() {
@@ -26,7 +32,7 @@ class ConcatStariskInTheWordTests {
         console.assert(result === expectedOutput, `Empty input test failed. Expected "${expectedOutput}", but got "${result}"`);
 
         input = null;
-        result = ConcatStariskInTheWord(input || "");  // Tratar null como string vazia
+        result = ConcatStariskInTheWord(input || "");
         console.assert(result === "", `Null input test failed. Expected empty string, but got "${result}"`);
     }
 

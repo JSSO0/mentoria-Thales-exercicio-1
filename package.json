@@ -1,0 +1,15 @@
+{
+    "name": "mentoria-thales",
+    "version": "1.0.0",
+    "description": "Projeto de testes com Node.js",
+    "main": "concatStariskInTheWord.js",
+    "scripts": {
+      "test": "node app.test.js",
+      "postinstall": "npm run test"
+    },
+    "author": "Joely",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {}
+  }
+  
