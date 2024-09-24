@@ -20,7 +20,7 @@ class ConcatStariskInTheWordTests {
 
     static testBasicFunctionality() {
         const input = "hello world";
-        const expectedOutput = "**he**llo **wo**rld ";
+        const expectedOutput = "**he**llo **wo**rld";
         const result = ConcatStariskInTheWord(input);
         console.assert(result === expectedOutput, `Basic functionality test failed. Expected "${expectedOutput}", but got "${result}"`);
     }
@@ -38,7 +38,7 @@ class ConcatStariskInTheWordTests {
 
     static testExtraSpaces() {
         const input = "hello   world";
-        const expectedOutput = "**he**llo    **wo**rld ";
+        const expectedOutput = "**he**llo    **wo**rld";
         const result = ConcatStariskInTheWord(input);
         console.assert(result === expectedOutput, `Extra spaces test failed. Expected "${expectedOutput}", but got "${result}"`);
     }
@@ -53,7 +53,7 @@ class ConcatStariskInTheWordTests {
 
     static testIgnoreShortWords() {
         const input = "a an is go";
-        const expectedOutput = "a an **i**s **g**o ";
+        const expectedOutput = "a an **i**s **g**o";
         const result = ConcatStariskInTheWord(input);
         console.assert(result === expectedOutput, `Short words test failed. Expected "${expectedOutput}", but got "${result}"`);
     }
@@ -61,3 +61,9 @@ class ConcatStariskInTheWordTests {
 
 
 ConcatStariskInTheWordTests.runAllTests();
+/*
+Assertion failed: Empty input test failed. Expected "", but got "**** "
+Assertion failed: Null input test failed. Expected empty string, but got "**** "
+Assertion failed: Extra spaces test failed. Expected "**he**llo    **wo**rld ", but got "**he**llo **** **** **wo**rld "
+Assertion failed: Short words test failed. Expected "a an **i**s **g**o ", but got "****a **a**n **i**s **g**o "
+*/

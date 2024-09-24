@@ -13,21 +13,34 @@ rl.question('Digite algo: ', (input) => {
 });
 
 function ConcatStariskInTheWord(input) {
+
+    if (input.length === 0) {
+        return "";
+    }
     let words = input.split(" ");
     let allWords = "";
+
     for (let i = 0; i < words.length; i++) {
-        let totalOfStrings = words[i].length;
+        if (words[i] === '') {
+            allWords += ' ';
+            continue;
+        }
         let middleOfWord = words[i].length / 2;
         let parte1 = words[i].substring(0, middleOfWord);
-        let parte2 = words[i].substring((totalOfStrings - middleOfWord));
+        let parte2 = words[i].substring((words[i].length - middleOfWord));
         let result = `**${parte1}**${parte2}`;
-        if (i < words.length) { result += ` `; }
+        if (i != (words.length - 1)) {
+            result += ` `;
+        }
         allWords += result;
     }
     return allWords;
 }
 module.exports = ConcatStariskInTheWord;
 /*
+
+1 - Se não é vazia - ok
+2 - ignorar palavras pequenas
 Quais testes que eu faria?
 - Provar que funciona
 - Testar para garantir que não da problema

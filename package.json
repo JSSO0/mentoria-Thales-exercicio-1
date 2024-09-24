@@ -4,8 +4,7 @@
     "description": "Projeto de testes com Node.js",
     "main": "concatStariskInTheWord.js",
     "scripts": {
-      "test": "node app.test.js",
-      "postinstall": "npm run test"
+      "test": "node app.test.js"
     },
     "author": "Joely",
     "license": "MIT",
