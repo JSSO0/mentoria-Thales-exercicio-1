@@ -11,31 +11,36 @@ rl.question('Digite algo: ', (input) => {
     console.log(result);
     rl.close();
 });
-
 function ConcatStariskInTheWord(input) {
-
     if (input.length === 0) {
         return "";
     }
-    let words = input.split(" ");
+    
+    let words = input.split(/(\s+)/);
     let allWords = "";
 
     for (let i = 0; i < words.length; i++) {
-        if (words[i] === '') {
-            allWords += ' ';
+        const trimmedWord = words[i].trim();
+        
+        if (/\s+/.test(words[i])) {
+            allWords += words[i];
             continue;
         }
-        let middleOfWord = words[i].length / 2;
-        let parte1 = words[i].substring(0, middleOfWord);
-        let parte2 = words[i].substring((words[i].length - middleOfWord));
-        let result = `**${parte1}**${parte2}`;
-        if (i != (words.length - 1)) {
-            result += ` `;
+
+        if (trimmedWord.length <= 1) {
+            allWords += trimmedWord;
+        } else {
+            let middleOfWord = Math.floor(trimmedWord.length / 2);
+            let parte1 = trimmedWord.substring(0, middleOfWord);
+            let parte2 = trimmedWord.substring(middleOfWord);
+            let result = `**${parte1}**${parte2}`;
+            allWords += result;
         }
-        allWords += result;
     }
+
     return allWords;
 }
+
 module.exports = ConcatStariskInTheWord;
 /*
 

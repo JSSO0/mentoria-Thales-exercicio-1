@@ -38,25 +38,26 @@ class ConcatStariskInTheWordTests {
 
     static testExtraSpaces() {
         const input = "hello   world";
-        const expectedOutput = "**he**llo    **wo**rld";
+        const expectedOutput = "**he**llo   **wo**rld";
         const result = ConcatStariskInTheWord(input);
         console.assert(result === expectedOutput, `Extra spaces test failed. Expected "${expectedOutput}", but got "${result}"`);
     }
-
+    
     static testLongWord() {
         const input = "supercalifragilisticexpialidocious";
         const middle = Math.floor(input.length / 2);
-        const expectedOutput = `**${input.slice(0, middle)}**${input.slice(middle)} `;
+        const expectedOutput = `**${input.slice(0, middle)}**${input.slice(middle)}`;
         const result = ConcatStariskInTheWord(input);
         console.assert(result === expectedOutput, `Long word test failed. Expected "${expectedOutput}", but got "${result}"`);
     }
-
+    
     static testIgnoreShortWords() {
         const input = "a an is go";
-        const expectedOutput = "a an **i**s **g**o";
+        const expectedOutput = "a **a**n **i**s **g**o";
         const result = ConcatStariskInTheWord(input);
         console.assert(result === expectedOutput, `Short words test failed. Expected "${expectedOutput}", but got "${result}"`);
     }
+    
 }
 
 
